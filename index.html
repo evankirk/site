@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minimalist Website</title>
+    <link rel="stylesheet" href="style.css"> <!-- If you have custom styles -->
+</head>
+<body>
+
+    <header>
+        <h1>Your Website Name</h1>
+    </header>
+
+    <div class="image-container">
+        <img src="your-image.jpg" alt="Hero Image"> <!-- Replace with your image -->
+        <div class="content">
+            <h2>Minimalist Design</h2>
+            <p>Welcome to a world of simplicity and elegance. Let the visuals speak for themselves.</p>
+
+            <h2>Books I've Read</h2>
+            
+            <!-- The books will be displayed here -->
+            <div id="book-list"></div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Your Website. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Replace 'USER_ID' with your actual Goodreads user ID
+        const rssFeedUrl = "https://www.goodreads.com/review/list_rss/162477302?shelf=read"; 
+
+        fetch(rssFeedUrl)
+            .then(response => response.text())
+            .then(data => {
+                const parser = new DOMParser();
+                const xmlDoc = parser.parseFromString(data, "text/xml");
+                const items = xmlDoc.getElementsByTagName("item");
+                const bookListContainer = document.getElementById('book-list');
+                
+                for (let i = 0; i < items.length; i++) {
+                    const item = items[i];
+                    const title = item.getElementsByTagName("title")[0].textContent;
+                    const link = item.getElementsByTagName("link")[0].textContent;
+                    const imageUrl = item.getElementsByTagName("image_url")[0].textContent;
+
+                    // Create a new list item for each book
+                    const bookItem = document.createElement('div');
+                    bookItem.classList.add('book-item');
+                    bookItem.innerHTML = `
+                        <a href="${link}" target="_blank">
+                            <img src="${imageUrl}" alt="${title}" />
+                            <p>${title}</p>
+                        </a>
+                    `;
+                    bookListContainer.appendChild(bookItem);
+                }
+            })
+            .catch(err => {
+                console.error("Error fetching the RSS feed: ", err);
+            });
+    </script>
+
+</body>
+</html>
