@@ -1,0 +1,130 @@
+/* Reset some default browser styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Global Styles */
+body {
+    font-family: 'Merriweather', serif; /* Merriweather font for text */
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f4;
+}
+
+/* Homepage Specific Styles */
+#homepage header {
+    text-align: center;
+    padding: 20px;
+    background-color: #444;
+    color: white;
+}
+
+#homepage h1 {
+    font-size: 3rem;
+    margin: 0;
+    font-weight: 700;
+}
+
+#homepage .hero-section {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    background-image: url('assets/headshot.jpg');
+    background-size: cover;
+    background-position: top center;
+    background-repeat: no-repeat;
+    text-align: center;
+}
+
+#homepage .hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Merriweather', serif;
+    font-size: 3rem;
+    font-weight: 700;
+    font-style: italic;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+#homepage .content {
+    padding: 40px;
+    background-color: #fff;
+    text-align: center;
+}
+
+#homepage .content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+#homepage .content p {
+    font-size: 1.2rem;
+    color: #555;
+}
+
+#homepage nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    background-color: #444;
+}
+
+#homepage nav ul li {
+    margin-right: 15px;
+    font-size: 1.2rem;
+}
+
+#homepage a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px 15px;
+}
+
+#homepage a:hover {
+    color: #005f73;
+    text-decoration: none;
+}
+
+/* Goodreads Books Widget */
+#homepage .gr_grid_container {
+    display: flex;
+    overflow-x: auto;
+    gap: 10px;
+    padding: 10px 0;
+    margin-top: 20px;
+    justify-content: flex-start;
+}
+
+#homepage .gr_grid_book_container {
+    width: 80px;
+    height: 120px;
+    overflow: hidden;
+    display: inline-block;
+    text-align: center;
+}
+
+#homepage .gr_grid_book_container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+#homepage footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #444;
+    color: white;
+}
+
+#homepage footer p {
+    font-size: 1rem;
+}
