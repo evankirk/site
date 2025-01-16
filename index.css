@@ -90,34 +90,18 @@ body {
 }
 
 #homepage a:hover {
-    color: #005f73;
+    color: #7ec8e3;
     text-decoration: none;
 }
 
-/* Goodreads Books Widget */
-#homepage .gr_grid_container {
-    display: flex;
-    overflow-x: auto;
-    gap: 10px;
-    padding: 10px 0;
+/* Space for the Goodreads Widget */
+#goodreads-space {
+    height: 200px; /* Adjust height if needed */
+    background-color: #f4f4f4; /* Optional: background color for the space */
     margin-top: 20px;
-    justify-content: flex-start;
 }
 
-#homepage .gr_grid_book_container {
-    width: 80px;
-    height: 120px;
-    overflow: hidden;
-    display: inline-block;
-    text-align: center;
-}
-
-#homepage .gr_grid_book_container img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
+/* Footer Styles */
 #homepage footer {
     text-align: center;
     padding: 10px;

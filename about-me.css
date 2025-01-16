@@ -74,7 +74,7 @@ body {
 }
 
 .content-item a:hover {
-    color: #005f73;
+    color: #7ec8e3;
 }
 
 /* Back to Home Button */
@@ -92,7 +92,7 @@ body {
 }
 
 .back-to-home .btn:hover {
-    background-color: #005f73;
+    background-color: #7ec8e3;
 }
 
 /* Footer Styles */
