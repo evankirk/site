@@ -1,140 +1,107 @@
 /* General Styles */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #000; /* Black background */
-    color: #FFF; /* White text for contrast */
-    line-height: 1.6; /* Makes the text more readable */
+    font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
+    background-color: #fff; /* Simple white background */
+    color: #000; /* Black text */
+    line-height: 1.6;
     display: flex;
     flex-direction: column;
-    min-height: 100vh; /* Ensures the footer stays at the bottom */
+    min-height: 100vh;
 }
 
-/* Header Styles */
 header {
-    background-color: #111; /* Dark header background */
-    color: #FFF; /* White text */
+    padding: 40px 0;
     text-align: center;
-    padding: 20px;
+    background-color: #000; /* Black header */
+    color: #fff; /* White text */
+    font-size: 2.5em;
+    font-weight: 400;
+    font-style: italic;
+    letter-spacing: 2px;
 }
 
 header h1 {
-    font-size: 2.5em;
-    font-weight: bold;
     margin: 0;
-    color: #FFF; /* White text for contrast */
 }
 
-/* Image Container Styles */
 .image-container {
     position: relative;
     width: 100%;
-    height: 400px; /* Height of hero image */
+    height: 400px;
+    overflow: hidden;
 }
 
 .image-container img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Ensures the image covers the container */
-    filter: grayscale(100%); /* Black and white effect */
+    object-fit: cover;
+    filter: brightness(50%); /* Dim the image */
 }
 
-/* Content Section */
 .content {
-    padding: 30px;
-    max-width: 1200px;
-    margin: 0 auto;
-    color: #FFF; /* White text */
+    text-align: center;
+    padding: 40px 20px;
+    flex-grow: 1;
 }
 
-.content h2 {
+h2 {
     font-size: 2.5em;
-    color: #FFF; /* White for section titles */
     margin-bottom: 20px;
+    color: #000;
+    font-weight: 700;
 }
 
-.content p {
+p {
     font-size: 1.2em;
-    color: #EEE; /* Light gray text for readability */
+    color: #333;
     line-height: 1.8;
-    margin-bottom: 20px;
+    max-width: 800px;
+    margin: 0 auto 40px auto;
 }
 
-/* Book List Section */
 #book-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center; /* Center align the books */
-    margin-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 30px;
+    margin: 40px auto;
+    padding: 0 20px;
+    max-width: 1200px;
 }
 
 .book-item {
-    width: 150px; /* Adjust the size of book covers */
     text-align: center;
-    margin-bottom: 20px;
-    background-color: #222; /* Dark background for each book */
-    border-radius: 8px;
-    padding: 10px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); /* Soft shadow */
-    transition: transform 0.3s ease-in-out;
-}
-
-.book-item:hover {
-    transform: scale(1.05); /* Slight zoom effect on hover */
+    font-size: 1.1em;
+    color: #000;
 }
 
 .book-item img {
-    width: 100px; /* Width of book cover */
-    height: 150px; /* Height of book cover */
-    object-fit: cover; /* Maintain aspect ratio */
-    border-radius: 5px;
-    transition: opacity 0.3s ease-in-out;
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
 
-.book-item img:hover {
-    opacity: 0.8; /* Hover effect on the image */
+.book-item a {
+    text-decoration: none;
+    color: #000;
 }
 
 .book-item p {
-    font-size: 1.1em;
-    color: #FFF;
+    font-size: 1em;
     margin-top: 10px;
-    word-wrap: break-word;
-    max-width: 120px;
-    margin: 0 auto;
 }
 
-/* Footer Styles */
+/* Footer Styling */
 footer {
-    background-color: #111; /* Dark footer */
-    color: #FFF; /* White text */
-    text-align: center;
     padding: 20px;
-    margin-top: auto; /* Pushes the footer to the bottom */
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    font-size: 1.1em;
 }
 
 footer p {
-    font-size: 1.2em;
-    color: #EEE; /* Light gray for footer text */
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .book-item {
-        width: 120px; /* Smaller size for mobile */
-    }
-
-    .content {
-        padding: 20px;
-    }
-
-    header h1 {
-        font-size: 2em; /* Smaller header text for mobile */
-    }
-
-    .content h2 {
-        font-size: 2em; /* Smaller section title for mobile */
-    }
+    margin: 0;
 }
